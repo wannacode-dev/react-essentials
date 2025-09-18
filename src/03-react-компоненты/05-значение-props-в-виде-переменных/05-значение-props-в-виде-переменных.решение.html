@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Значение props в виде переменных</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .text {
+            color: blue;
+        }
+    </style>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+        <script type="text/babel">
+        const headingText = "Привет из React компонента!";
+        const descriptionText = "Это текст из компонента P";
+
+        function Title({ text }) {
+            return <h1 className="title">{headingText}</h1>;
+        }
+
+        function Text({ text }) {
+            return <p className="text">{descriptionText}</p>;
+        }
+
+        function Container({ children }) {
+            return <div className="container">{children}</div>;
+        }
+
+        const elements = (
+            <Container>
+                <Title text={headingText} />
+                <Text text={descriptionText} />
+            </Container>
+        );
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(elements);
+    </script>
+</body>
+</html>

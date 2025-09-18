@@ -1,0 +1,28 @@
+{
+  "name": "react-esentials-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "test": "jest",
+    "preview": "vite preview",
+    "play": "node scripts/play.js",
+    "gen:play:scripts": "node scripts/generate-scripts.js"
+  },
+  "keywords": [],
+  "author": "Max Roslow",
+  "license": "ISC",
+  "description": "React Essentials 2",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "husky": "^9.1.7",
+    "vite": "^6.3.6"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "type": "module"
+}

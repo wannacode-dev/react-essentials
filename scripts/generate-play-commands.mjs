@@ -28,8 +28,9 @@ function toPosix(p) {
 function buildScriptName(relativeFile) {
   const relDir = path.dirname(relativeFile);
   const base = path.basename(relativeFile);
-  const dirPart = toPosix(relDir);
-  return `play:@src:${dirPart}:${base}`;
+  const dirPart = toPosix(relDir).split('/').filter(Boolean).join(':');
+  const prefix = dirPart ? `${dirPart}:` : '';
+  return `play:@src:${prefix}${base}`;
 }
 
 function buildCommand(relativeFile) {
